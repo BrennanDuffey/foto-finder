@@ -1,0 +1,135 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  margin: 0;
+}
+
+header {
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  background-color: #3E2A35;
+}
+
+header h1 {
+  font-weight: 800;
+  margin-left: 2rem;
+  letter-spacing: .2rem;
+}
+
+.logo {
+  height: 2rem;
+  margin: 0 .2em;
+}
+
+.header-search {
+  display: flex;
+  align-self: center;
+  margin-right: 2rem;
+}
+
+.search-input {
+  border-radius: 5px 0 0 5px;
+  border: solid 2px #ACAAB5;
+  padding: 5px;
+}
+
+.search-btn {
+  background-color: #ACAAB5;
+  border-color: #ACAAB5;
+  border-radius: 0 5px 5px 0;
+  color: #fff;
+  padding: 6px;
+}
+
+.input-section {
+  background-color: #3E2A35;
+}
+
+.user-input {
+  padding: .5rem;
+}
+
+.main-form {
+  display: flex;
+  flex-direction: column; 
+  width: 40%;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.choose-file {
+  margin:0 auto;
+}
+
+.last-two-btns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.last-two-btns button {
+  width: 40%
+}
+
+.photo-gallery {
+  background-color: #C2B2B4;
+  color: #3E2A35;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0 0 4%;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid #938284;
+  width: 20%;
+  margin: 4% 2% 0;
+}
+
+.card img {
+  height: 200px;
+  width: 100%;
+}
+
+.fav-delete {
+  display: flex;
+  justify-content: space-between;
+  background-color: #5B4447;
+}
+
+.delete-save-btns {
+  background-color: #5B4447;
+  border: none;
+}
+
+.fav-delete img {
+  height: 1.5rem;
+}
+
+.favorite-btn {
+  background-image:url(images/favorite-active.svg);
+  background-size: 100% 100%;
+}
+
+footer {
+  background-color: #C2B2B4;
+  color: #3E2A35;
+  display: flex;
+  justify-content: space-around;
+}
+
+.start-hidden {
+  visibility: hidden;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+

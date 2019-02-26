@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Foto Finder</title>
+  <link rel="stylesheet" type="text/css" href="normalize.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600,800" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <h1>Foto<img src="images/foto-finder-logo.svg" class="logo">Finder</h1>
+    <form class="header-search">
+      <input type="search" name="search" placeholder="Search" class="search-input" id="search-input">
+      <button class="search-btn"><i class="fas fa-search"></i></button>
+    </form>
+  </header>
+  <main>
+    <section class="input-section">
+      <form class="main-form">
+        <label for="title-input" class="form-label">Title</label>
+        <input class="user-input" type="text" id="title-input">
+        <label for="caption-input" class="form-label">Caption</label>
+        <input class="user-input" type="text" id="caption-input">
+        <input class="choose-file" id="choose-file" type="file" name="choose-file" accept="image/svg, image/png, image/jpg, image/jpeg">
+        <div class="last-two-btns">
+          <button id="favorite-filter-btn" >View <span id="num-of-favorites">0</span> Favorites</button>
+          <button id="add-to-album-btn" type="submit">Add to Album</button>
+        </div>
+      </form>
+    </section>
+    <section class="photo-gallery" id="photo-gallery"></section>
+    <footer id="show-more-footer">
+      <button id="show-more-btn" class="start-hidden show-more-btn">
+        Show More...
+      </button>
+    </footer>
+  </main>
+</body>
+<script type="text/javascript" src="photo.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</html>
