@@ -11,17 +11,17 @@
 }
 
 header {
+  background-color: #3E2A35;
   color: #fff;
   display: flex;
   justify-content: space-between;
-  background-color: #3E2A35;
 }
 
 header h1 {
   font-size: 2.5rem;
   font-weight: 800;
-  margin-left: 2rem;
   letter-spacing: .2rem;
+  margin-left: 2rem;
 }
 
 .logo {
@@ -30,8 +30,8 @@ header h1 {
 }
 
 .header-search {
-  display: flex;
   align-self: center;
+  display: flex;
   margin-right: 2rem;
 }
 
@@ -54,11 +54,11 @@ header h1 {
 }
 
 .main-form {
+  color: #C2B2B4;
   display: flex;
   flex-direction: column; 
-  width: 40%;
   margin: 0 auto;
-  color: #C2B2B4;
+  width: 40%;
 }
 
 .form-label {
@@ -72,10 +72,10 @@ header h1 {
 
 .btn {
   background-color: #5B4447;
-  color: #FFFFFF;
   border: none;
-  padding: 10px 20px 5px;
+  color: #FFFFFF;
   margin-top: 30px;
+  padding: 10px 20px 5px;
 }
 
 .btn:hover {
@@ -88,11 +88,11 @@ header h1 {
 
 .choose-file-label {
   background-color: #5B4447;
-  margin: 15px auto 0;
   color: #FFFFFF;
+  margin: 15px auto 0;
+  padding: 10px 0;
   text-align: center;
   width: 100%;
-  padding: 10px 0;
 }
 
 .last-two-btns {
@@ -101,9 +101,9 @@ header h1 {
 }
 
 .last-two-btns button {
-  width: 40%;
   margin: 30px 0 30px;
   padding: 10px 0 10px;
+  width: 40%;
 }
 
 .photo-gallery {
@@ -117,8 +117,9 @@ header h1 {
 .card {
   background-color: #FFFFFF;
   border: 1px solid #938284;
-  width: 20%;
   margin: 4% 2% 0;
+  position: relative;
+  width: 20%;
 }
 
 .card img {
@@ -126,10 +127,16 @@ header h1 {
   width: 100%;
 }
 
+.caption {
+  margin-bottom: 2.5rem;
+}
+
 .fav-delete {
+  background-color: #5B4447;
+  bottom: 0;
   display: flex;
   justify-content: space-between;
-  background-color: #5B4447;
+  position: absolute;
 }
 
 .delete-save-btns {
@@ -144,8 +151,10 @@ header h1 {
 
 .favorite-btn {
   background-image:url(images/favorite-active.svg);
-  background-size: 100% 84%;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
+  height: 2rem;
+  padding: 0;
 }
 
 footer {
@@ -167,4 +176,60 @@ footer {
   display: none;
 }
 
+@media screen and (max-width: 930px) {
+  .card {
+    margin: 2% 1% 0;
+    width: 30.3%;
+  }
 
+  .main-form {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .card {
+    margin: 6.6% 3.3% 0;
+    width: 40%;
+  }
+
+  .main-form {
+    width: 70%;
+  }
+
+  header {
+    flex-direction: column;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+
+  .header-search {
+    align-self: start;
+    margin-right: 0;
+    width: 70%;
+  }
+
+  .search-input {
+    margin-left: 14px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .card {
+    margin: 6.6% 3.3% 0;
+    width: 90%;
+  }
+
+  .main-form {
+    width: 90%;
+  }
+
+  header h1 {
+    font-size: 2.3rem;
+    margin-left: 0;
+  }
+
+  .header-search {
+    width: 66%;
+  }
+}
