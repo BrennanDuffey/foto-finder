@@ -6,8 +6,8 @@ var favoriteFilterBtn = document.querySelector('#favorite-filter-btn');
 var addToAlbumBtn = document.querySelector('#add-to-album-btn');
 var photoGallery = document.querySelector('#photo-gallery');
 var showMoreBtn = document.querySelector('#show-more-btn');
-var photoArr = [];
 var numOfFavorites = document.querySelector('#num-of-favorites');
+var photoArr = [];
 var reader = new FileReader();
 
 window.addEventListener('load', onLoad);
@@ -46,7 +46,7 @@ function loadImg(e) {
 }
 
 function appendCard(photo) {
-  photoGallery.innerHTML += 
+  photoGallery.innerHTML = 
     `<article class="card" data-id=${photo.id}>
       <p contenteditable="true" id="card-title">${photo.title}</p>
       <img src=${photo.file}>
@@ -59,7 +59,7 @@ function appendCard(photo) {
           <img src="images/favorite.svg" id="fav-btn" class="fav-btn">
         </button>
       </div>
-    </article>`
+    </article>` + photoGallery.innerHTML;
   favoriteOnLoad(photo);
 }
 
@@ -126,7 +126,9 @@ function showFavorites(e) {
   } else if (favoriteFilterBtn.innerText === 'View All Photos'){
     photoGallery.innerHTML = '';
     favoriteFilterBtn.innerHTML = `View <span id="num-of-favorites">0</span> Favorites`;
+    numOfFavorites = document.querySelector('#num-of-favorites');
     photoArr.forEach(photo => appendCard(photo));
+    updateFavoriteNumber();
   }
 }
 
@@ -138,7 +140,7 @@ function updateFavoriteNumber() {
 function favoriteOnLoad(photo) {
   var buttons = document.querySelectorAll('.fav-btn');
   if (photo.favorite === true) {
-    buttons[buttons.length-1].classList.add('hidden');
+    buttons[0].classList.add('hidden');
   }
 }
 
