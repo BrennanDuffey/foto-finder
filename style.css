@@ -137,6 +137,7 @@ header h1 {
   display: flex;
   justify-content: space-between;
   position: absolute;
+  width: 100%;
 }
 
 .delete-save-btns {
