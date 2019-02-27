@@ -18,6 +18,7 @@ header {
 }
 
 header h1 {
+  font-size: 2.5rem;
   font-weight: 800;
   margin-left: 2rem;
   letter-spacing: .2rem;
@@ -52,20 +53,46 @@ header h1 {
   background-color: #3E2A35;
 }
 
-.user-input {
-  padding: .5rem;
-}
-
 .main-form {
   display: flex;
   flex-direction: column; 
   width: 40%;
   margin: 0 auto;
-  color: #fff;
+  color: #C2B2B4;
+}
+
+.form-label {
+  padding: 0 0 10px;
+}
+
+.user-input {
+  margin: 0 0 19px;
+  padding: .5rem;
+}
+
+.btn {
+  background-color: #5B4447;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px 5px;
+  margin-top: 30px;
+}
+
+.btn:hover {
+  background-color: #938284;
 }
 
 .choose-file {
-  margin:0 auto;
+  display: none;
+}
+
+.choose-file-label {
+  background-color: #5B4447;
+  margin: 15px auto 0;
+  color: #FFFFFF;
+  text-align: center;
+  width: 100%;
+  padding: 10px 0;
 }
 
 .last-two-btns {
@@ -74,7 +101,9 @@ header h1 {
 }
 
 .last-two-btns button {
-  width: 40%
+  width: 40%;
+  margin: 30px 0 30px;
+  padding: 10px 0 10px;
 }
 
 .photo-gallery {
