@@ -106,15 +106,17 @@ header h1 {
 .delete-save-btns {
   background-color: #5B4447;
   border: none;
+  width:20%;
 }
 
 .fav-delete img {
-  height: 1.5rem;
+  height: 2rem;
 }
 
 .favorite-btn {
   background-image:url(images/favorite-active.svg);
-  background-size: 100% 100%;
+  background-size: 100% 84%;
+  background-repeat: no-repeat;
 }
 
 footer {

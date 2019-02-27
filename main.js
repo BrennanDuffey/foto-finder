@@ -6,7 +6,7 @@ var favoriteFilterBtn = document.querySelector('#favorite-filter-btn');
 var addToAlbumBtn = document.querySelector('#add-to-album-btn');
 var photoGallery = document.querySelector('#photo-gallery');
 var showMoreBtn = document.querySelector('#show-more-btn');
-var photoArr = JSON.parse(localStorage.getItem('storedPhotos')) || [];
+var photoArr = [];
 var numOfFavorites = document.querySelector('#num-of-favorites');
 var reader = new FileReader();
 
@@ -19,12 +19,12 @@ showMoreBtn.addEventListener('click', showMoreLessBtn);
 favoriteFilterBtn.addEventListener('click', showFavorites)
 
 function onLoad() {
-  photoArr.forEach(obj => { 
+  var storedArray = JSON.parse(localStorage.getItem('storedPhotos'));
+  storedArray.forEach(obj => { 
     appendCard(obj)
     oldPhoto = new Photo(obj.id, obj.title, obj.caption, obj.file, obj.favorite)
     photoArr.push(oldPhoto)
   });
-  photoArr.splice(0, photoArr.length/2);
   showMoreOnLoad();
   updateFavoriteNumber();
 }
@@ -119,8 +119,15 @@ function showMoreLessBtn() {
 function showFavorites(e) {
   e.preventDefault();
   var favoritePhotos = photoArr.filter(photo => photo.favorite === true);
-  photoGallery.innerHTML = '';
-  favoritePhotos.forEach(photo => appendCard(photo));
+  if (favoriteFilterBtn.innerText === 'View ' + favoritePhotos.length + ' Favorites') {
+    photoGallery.innerHTML = '';
+    favoriteFilterBtn.innerHTML = 'View All Photos';
+    favoritePhotos.forEach(photo => appendCard(photo));    
+  } else if (favoriteFilterBtn.innerText === 'View All Photos'){
+    photoGallery.innerHTML = '';
+    favoriteFilterBtn.innerHTML = `View <span id="num-of-favorites">0</span> Favorites`;
+    photoArr.forEach(photo => appendCard(photo));
+  }
 }
 
 function updateFavoriteNumber() {
@@ -129,11 +136,9 @@ function updateFavoriteNumber() {
 }
 
 function favoriteOnLoad(photo) {
-  var buttons = document.querySelectorAll('#fav-btn')
-  buttons.forEach(function(button) {
-    if (photo.favorite === true) {
-      button.classList.add('hidden');
-    }
-  })
+  var buttons = document.querySelectorAll('.fav-btn');
+  if (photo.favorite === true) {
+    buttons[buttons.length-1].classList.add('hidden');
+  }
 }
 
