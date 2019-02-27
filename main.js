@@ -7,16 +7,18 @@ var addToAlbumBtn = document.querySelector('#add-to-album-btn');
 var photoGallery = document.querySelector('#photo-gallery');
 var showMoreBtn = document.querySelector('#show-more-btn');
 var numOfFavorites = document.querySelector('#num-of-favorites');
+var inputSection = document.querySelector('.input-section')
 var photoArr = [];
 var reader = new FileReader();
 
 window.addEventListener('load', onLoad);
+inputSection.addEventListener('input', disableAddPhotoBtn)
 addToAlbumBtn.addEventListener('click', loadImg);
 photoGallery.addEventListener('input', editCardText);
 searchInput.addEventListener('input', search);
 photoGallery.addEventListener('click', favAndDelete);
 showMoreBtn.addEventListener('click', showMoreLessBtn);
-favoriteFilterBtn.addEventListener('click', showFavorites)
+favoriteFilterBtn.addEventListener('click', showFavorites);
 
 function onLoad() {
   var storedArray = JSON.parse(localStorage.getItem('storedPhotos'));
@@ -26,7 +28,11 @@ function onLoad() {
     photoArr.push(oldPhoto)
   });
   showMoreOnLoad();
+  disableAddPhotoBtn();
   updateFavoriteNumber();
+  if (photoGallery.innerHTML === '') {
+    photoGallery.innerHTML = `<h1>LET'S ADD SOME PHOTOS PLEASE OR DON'T</h1>`
+  }
 }
 
 function addPhoto(e) {
@@ -63,6 +69,15 @@ function appendCard(photo) {
   favoriteOnLoad(photo);
 }
 
+function disableAddPhotoBtn() {
+  console.log(titleInput.value)
+  if (titleInput.value === '' || captionInput.value === '' || photoInput.files.length == 0) {
+    addToAlbumBtn.disabled = true;
+  } else {
+    addToAlbumBtn.disabled = false;
+  }
+}
+
 function editCardText(e) {
   var card = e.target.closest('.card');
   var index = photoArr.findIndex(photo => photo.id === parseInt(card.dataset.id));
@@ -82,7 +97,7 @@ function favAndDelete(e) {
   } else if (e.target.id === 'fav-btn-active') {
     photoArr[index].updateContent(photoArr, index, e.target.id);
     updateFavoriteNumber();
-    e.target.firstElementChild.classList.remove('hidden')
+    e.target.firstElementChild.classList.remove('hidden');
   }
 }
 
