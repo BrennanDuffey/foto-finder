@@ -55,7 +55,7 @@ function appendCard(photo) {
     `<article class="card" data-id=${photo.id}>
       <p contenteditable="true" id="card-title">${photo.title}</p>
       <img src=${photo.file}>
-      <p contenteditable="true" id="card-caption">${photo.caption}</p>
+      <p contenteditable="true" id="card-caption" class="caption">${photo.caption}</p>
       <div class="fav-delete">
         <button class="delete-save-btns">
           <img src="images/delete.svg" id="delete-btn">
