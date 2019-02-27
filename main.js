@@ -7,7 +7,8 @@ var addToAlbumBtn = document.querySelector('#add-to-album-btn');
 var photoGallery = document.querySelector('#photo-gallery');
 var showMoreBtn = document.querySelector('#show-more-btn');
 var numOfFavorites = document.querySelector('#num-of-favorites');
-var inputSection = document.querySelector('.input-section')
+var inputSection = document.querySelector('.input-section');
+var photoGalleryMessage = document.querySelector('#photo-gallery-message')
 var photoArr = [];
 var reader = new FileReader();
 
@@ -30,9 +31,7 @@ function onLoad() {
   showMoreOnLoad();
   disableAddPhotoBtn();
   updateFavoriteNumber();
-  if (photoGallery.innerHTML === '') {
-    photoGallery.innerHTML = `<h1>LET'S ADD SOME PHOTOS PLEASE OR DON'T</h1>`
-  }
+  photoGalleryEmpty();
 }
 
 function addPhoto(e) {
@@ -67,10 +66,10 @@ function appendCard(photo) {
       </div>
     </article>` + photoGallery.innerHTML;
   favoriteOnLoad(photo);
+  photoGalleryEmpty();
 }
 
 function disableAddPhotoBtn() {
-  console.log(titleInput.value)
   if (titleInput.value === '' || captionInput.value === '' || photoInput.files.length == 0) {
     addToAlbumBtn.disabled = true;
   } else {
@@ -90,6 +89,7 @@ function favAndDelete(e) {
   if (e.target.id === 'delete-btn') {
     photoArr[index].deleteFromStorage(photoArr, index);
     e.target.closest('.card').remove();
+    photoGalleryEmpty();
   } else if (e.target.id === 'fav-btn') {
     photoArr[index].updateContent(photoArr, index, e.target.id);
     updateFavoriteNumber();
@@ -159,3 +159,10 @@ function favoriteOnLoad(photo) {
   }
 }
 
+function photoGalleryEmpty() {
+  if (photoGallery.innerHTML === '') {
+    photoGalleryMessage.innerHTML = `<h1 id="empty-gallery-message">LET'S ADD SOME PHOTOS PLEASE OR DON'T</h1>`
+  } else {
+    photoGalleryMessage.innerHTML = ''
+  }
+}

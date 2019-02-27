@@ -134,4 +134,8 @@ footer {
   visibility: hidden;
 }
 
+.hidden-none {
+  display: none;
+}
+
 
