@@ -19,9 +19,9 @@ A project creating a UI from a flat image using HTML, CSS, and JS for Turing's F
 
 Foto Finder was a project assigned as a final solo project in Mod 1 at Turing.  We were given a flat image with styling details (e.g. hex codes) to reproduce from scratch in code.  This project consisted working partly with HTML and CSS, but primarily with JS.  This is the original design in desktop and mobile formats:
 
-<img src="https://github.com/BrennanDuffey/ideaBox/blob/master/images/original1.jpg" alt="Original flat image for desktop">
+<img src="https://github.com/BrennanDuffey/foto-finder/blob/master/images/turing-foto-finder-desktop.png" alt="Screenshot of site for desktop">
 
-<img src="https://github.com/BrennanDuffey/ideaBox/blob/master/images/original2.jpg" alt="Original flat image for mobile">
+<img src="https://github.com/BrennanDuffey/foto-finder/blob/master/images/turing-foto-finder-mobile.png" alt="Screenshot of site for mobile">
 
 
 ## Built With
@@ -32,10 +32,10 @@ Foto Finder was a project assigned as a final solo project in Mod 1 at Turing.  
 
 
 ## Screenshots
-<img src="https://github.com/BrennanDuffey/ideaBox/blob/master/images/desktop1.png" alt="Screenshot of site for desktop">
-<img src="https://github.com/BrennanDuffey/ideaBox/blob/master/images/desktop2.png" alt="Screenshot of site for desktop">
-<img src="https://github.com/BrennanDuffey/ideaBox/blob/master/images/mobile1.png" alt="Screenshot of site for mobile">
-<img src="https://github.com/BrennanDuffey/ideaBox/blob/master/images/mobile2.png" alt="Screenshot of site for mobile">
+
+<img src="https://github.com/BrennanDuffey/foto-finder/blob/master/images/DBD-foto-finder-desktop.png" alt="Original flat image for desktop">
+
+<img src="https://github.com/BrennanDuffey/foto-finder/blob/master/images/DBD-foto-finder-mobile.png" alt="Original flat image for mobile">
 
 ## Features
 
